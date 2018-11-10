@@ -2,17 +2,143 @@
 
 ## Getting Started
 
-  ### Install Anaconda, Course Materials and Create Movie Recommendations
-  
-  ### Course Roadmap
-  
-  ### Type of Recommenders
-  
-  ### Undestanding You through Implicit and Explicit Ratings
-  
-  ### Top-N Recommender Architecture
-  
-  ### Review the basics of Recommender Systems
+### Install Anaconda, Course Materials and Create Movie Recommendations
+
+- Tensorflow
+
+- DSSTNE
+
+- SageMaker
+
+- Apache Spark
+
+**Recommender Systems - Getting Set Up**
+
+- Install Anaconda for Python 3 - https://www.anaconda.com/download/
+
+- Create an Environment - Open Anaconda Navigator, select “Environments,” and create a new “RecSys” environment for Python 3.6 or newer
+
+- Install Scikit-Surprise - From the RecSys environment you just made, click the arrow next to it and select “Open Terminal.” In the terminal, run:
+
+```
+conda install -c conda-forge scikit-surprise
+```
+
+Hit ‘y’ to proceed if prompted.
+
+- Download Course Materials 
+
+- Other Resources - https://www.amazon.com/gp/product/B07GCV5JCZ/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B07GCV5JCZ&linkCode=as2&tag=sundog07-20&linkId=0aa54fda30b476b37e5ea02feb2c53d3
+
+**Singular Value Decomposition (SVD)**
+
+- 100,000 movie ratings with just about 60 lines of code
+
+- It starts by choosing an arbitrary user *whom we're going to get to know very well* and summarizing the movies that he loved and the movies he hated, so you can get a sense of his taste
+
+But it's hard to tell if a movie you've never heard of is a good recommendation or not
+
+Just defining what makes a good recommendation is huge problem that's really central to the field of Recommender Systems
+
+In many ways, building Recommender Systems is more Art than Science
+You're trying to get inside people's heads and build models of their preferences
+
+### Course Roadmap
+
+- Getting Started
+
+- Intro to Python
+
+- Evaluating Recommender Systems
+
+- Building a Recommendation Engine
+
+- Content-Based Filtering
+
+- Neighborhood-Based Collaborative Filtering
+
+- Model-Based Methods
+
+- Intro to Deep Learning
+
+- Recommendations with Deep Learning
+
+- Scaling it Up
+
+- Challenges of Recommender Systems
+
+- Case Studies
+
+- Hybrid Solutions
+
+- More
+
+### Type of Recommenders
+
+**Many Flavors of Recommenders**
+
+- Things
+
+- Content
+
+- Music
+
+- People (Online Dating)
+
+- Search Results
+
+### Undestanding You through Implicit and Explicit Ratings
+
+- Understanding You
+
+- Understanding You ... Explicitly (Feedback)
+
+- Understanding You ... Implicitly (Looking at the things you do and interpreting them)
+
+A big part of why Amazon's recommendations are so good is because they have so much purchase data to work with and it's such a great signal for someone's interests
+
+They don't even need great recommendation algorithms, because the data they're working with is so great to begin with
+
+### Top-N Recommender Architecture
+
+The job of the Top-N Recommender Systems is to produce a finite list of the best things to present to a given person
+
+Customers don't want to see your ability to predict their rating for an item
+
+They just want to see things they're likely to love
+
+**GOAL:** Put the Best Content we can find in front of users in the form of a top-N list
+
+**(One) Anatomy of a top-N Recommender**
+
+- Individual Interest - Thing they bough in the part - Usually a Big Distributed NoSQL like Cassandra, MongoDB or memcached; ideally, this interest data is normalized using techniques such as Mean Centering or Z Scores to ensure that the Data is comparable between users
+
+- Candidate Generation - Items we think might be interestinig to the user 
+
+- Item Similarities - Items that are similar
+
+- Candidate Ranking - Many Candidates will appear more than once and need to be combined together in some way 
+
+- Filtering - Take the N best recommendations
+
+**Another way to do it - Theorical Approach**
+
+- Candidate Generation 
+
+- Rating Predictions
+
+- Candidate Ranking
+
+- Filtering
+
+### Review the basics of Recommender Systems
+
+- Purchasing, viewing, and clicking are all **Implicit Ratings**. We can infer you like something because you chose to interact with it somehow
+
+- Star Reviews are **Explicit Ratings**. They provide very good data for Recommender Systems, they require extra work from your users
+
+- Examples: Netflix's Home Page, Google Search, Amazon's "people who also bought...", Pandora, YouTube
+
 
 ## Introduction to Python [Optional]
 
@@ -241,7 +367,3 @@
   ### More to Explore
   
   ### Bonus Lecture: Companion Book and More Courses 
-
-## References
-
-- https://www.udemy.com/building-recommender-systems-with-machine-learning-and-ai/learn/v4/overview

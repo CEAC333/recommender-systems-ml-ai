@@ -212,6 +212,24 @@ When we're done we take the square root to get back to a number that makes sense
 
 ### Top-N Hit Rate - Many Ways
 
+**Evaluating Top-N Recommenders**
+
+- **Hit Rate** - Generate Top End Recommendations for all of the users in your test set. If one of the recommendations in a users top-end recommendations is something they actually rated, you consider that a hit. You actually managed to show the user something they found interesting enough to watch on their own already so we'll consider that a success **hits/users**. Just add up all the hits in your top-end recommendations for every user in your test set, divide by the number of users, and that's your hit rate
+
+- **Leave-One-Out Cross Validation** - Compute Top-End Recommendations for each user in our Training Data and intentionally remove one of those items from that users training data. We then test our recommenders system's ability to recommend that item that was left out in the Top-End Results it creates for that user in the testing phase. So we measure our ability to recommend an item in a top-end list for each user that was left our from the training data. That's why it's called **"leave-one-out"**. The trouble is it's a lot harder to get one specific movie right while testing than to just get one of the recommendations. So **"hit rate"** with **"leave-one-out"** tends to be very small and difficult to measure unless you have a very large data set to work with. But it's a much more *user focused metric* when you know your recommender system will be producing Top-End Lists in the real world, which most of them do
+
+- **Average Reciprocal Hit Rate (ARHR)** - A variation on **"hit rate"**. This metric is just like **"hit rate"** but it accounts for where in the Top-End list your hits appear. So you end up getting more credit for successfully recommendinng an item in the top slot tha in the bottom slot. Again, this is a more *user focused metric* since users tend to focus on the beginning of lists. The only difference is that instead of summing up the number of hits we sum up the reciprocal rank of each hit. So if we successfully predict our recommedation in slot three, that only counts as 1/3. But a hit in slot one of our *Top-End Recommendations* receives the full weight of **1.0**. Whether this metric makes sense for you depends a lot on how your *Top-End Recommendations* are displayed. If the user has to scroll or paginate to see the lower items in your *Top-End List* then it makes sense to penalize good recommendations that appear too low in the list where the user has to work to find them
+
+- **Cumulative Hit Rate (cHR)** - We throw away hits if our predicted rating is below some threshold. The idea is that we shouldn't get credit for recommending items to a user that we think they won't actually enjoy
+
+- **Rating Hit Rate (rHR)** - Break it down by predicted rating score. It can be a good way to get an idea of the distribution of how good your algorithm thinks recommended movies are that actually get a hit. Ideally you want to recommend movies that they actually liked and breaking down the distribution gives you some sense of how well you're doing in more detail
+
+Those are all different ways to measure the effectiveness of *Top-End Recommendations* Offline
+
+The World of *Recommender Systems* would be probably be a little bit different if Netflix awarded the Netflix prize on hit rate instead of RMSC. It turns out that small improvements in RMSC can actually result in large improvements to hit rate which is what really matters. But it also turns out that you can build *Recommender Systems* with great *Hit Rates* but poor RMSC scores and we'll see some of those later 
+
+So RMSC and hit rate aren't always related
+
 ### Covarage, Diversity, and Novelty
 
 ### Churn, Responsiveness, and A/B Tests
@@ -223,6 +241,8 @@ When we're done we take the square root to get back to a number that makes sense
 ### Walkthrough of TestMetrics.py
 
 ### Measure the Performance of SVD Recommendations
+
+
   
 ## A Recommender Engine Framework
 
@@ -233,6 +253,10 @@ When we're done we take the square root to get back to a number that makes sense
   ### Recommender Engine Walkthrough, Part 2
   
   ### Review the Results of our Algorithm Evaluation
+  
+  
+  
+  
 
 ## Content-Based Filtering
 

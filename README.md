@@ -152,23 +152,77 @@ They just want to see things they're likely to love
 
 ## Evaluating Recommender Systems
 
-  ### Train/Test and Cross Validation
-  
-  ### Accuracy Metrics (RMSE, MAE)
-  
-  ### Top-N Hit Rate - Many Ways
-  
-  ### Covarage, Diversity, and Novelty
-  
-  ### Churn, Responsiveness, and A/B Tests
-  
-  ### Review ways to measure your recommender
-  
-  ### Walkthrough of RecommenderMetrics.py
-  
-  ### Walkthrough of TestMetrics.py
-  
-  ### Measure the Performance of SVD Recommendations
+### Train/Test and Cross Validation
+
+**Train/Test - Methodology for Testing Recommender Systems Offline**
+
+- Full Data Set (Movie Ratings, etc.)
+
+- Training Set (80-90 %)
+
+- Machine Learning
+
+- Predictions
+
+- Test Set
+
+**K-Fold Cross-Validation**
+
+- Full Data Set (Movie Ratings, etc.)
+
+- Fold 1 -> Machine Learning -> Measure Accuracy
+
+- Fold 2 -> Machine Learning -> Measure Accuracy
+
+- Test Set
+
+- Fold k-1 -> Machine Learning -> Measure Accuracy
+
+- Take Average of Measured Accuracies
+
+### Accuracy Metrics (RMSE, MAE)
+
+**Mean Absolute Error (MAE)**
+
+The most straightforward metric is Mean Absolute Error or MAE:
+
+- Let's say we have **n** ratings in our test set that we want to evaluate
+
+- For each rating we call the rating or system predicts **y**
+
+- And the rating the user actually gave **x**
+
+- Just take the absolute value of the difference between the two, to measure the error for that rating prediction
+
+It's literally just the difference between the predicted rating and the actual rating
+
+We sum those errors up across all n ratings in our test set, and divide by n to get the average, or mean
+
+So mean absolute error is exactly that, the mean or average absolute values of each error in rating predictions 
+
+**Root Mean Square Error (RMSE)**
+
+This is a more popular metric for a few reasons, but one is that it penalizes you more when your rating prediction is way off, and penalizes you less when you are reasonably close
+
+The differences is that instead of summing up the absolute values of each rating prediction error, we sum up the squares of the rating prediction errors instead
+
+Taking the square we ensures we end up with positive numbers like absolute values do and it also inflates the penalty for larger errors
+
+When we're done we take the square root to get back to a number that makes sense
+
+### Top-N Hit Rate - Many Ways
+
+### Covarage, Diversity, and Novelty
+
+### Churn, Responsiveness, and A/B Tests
+
+### Review ways to measure your recommender
+
+### Walkthrough of RecommenderMetrics.py
+
+### Walkthrough of TestMetrics.py
+
+### Measure the Performance of SVD Recommendations
   
 ## A Recommender Engine Framework
 

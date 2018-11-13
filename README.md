@@ -87,7 +87,7 @@ You're trying to get inside people's heads and build models of their preferences
 
 - Search Results
 
-### Undestanding You through Implicit and Explicit Ratings
+### Understanding You through Implicit and Explicit Ratings
 
 - Understanding You
 

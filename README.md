@@ -261,12 +261,37 @@ So RMSC and hit rate aren't always related
 
 - **Perceived Quality** - Another thing you can do is just straight up ask your users if they think specific recommendations are good. Just like you can ask for explicit feedback on items with ratings, you can ask users to rate your recommendations, too. This is called measuring **"Perceived Quality"** and it seems like a good idea on paper, since, as you've learned, defining what makes a "good" recommendation is by no means clear. In practice though, it's a tough thing to do. Users will probably be confused over whether you're asking them to rate the item or rate the recommendation, so you won't really know how to interpret this data. It also requires extra work from your customers with no clear payoff for them, so you're unlikely to get enough ratings on your recommendations to be useful. It's best to just stick with the **Online A/B tests**, and measure how your customers **vote with their wallets** on the **Quality** of your Recommendations.
 
+### Review ways to measure your recommender - Q&A's
+
+**Which Metric was used to Evaluate the Netflix Prize?**
+
+- *R: Root mean Squared Error (RSME)*
+
+**What's a Metric for Top-N recommenders that accounts for the Rank of predicted items?**
+
+- *R: Average Reciprocal Hit Rank (ARHR)*
+
+**Which Metric measures how Popular or Obscure your recommendations are?**
+
+- *R: Novelty*
+
+**Which Metric would tell us if we're recommending the same types of things all the time?**
+
+- *R: Diversity*
+
+**Which Metric matters more than anything?**
+
+- *R: The Results of Online A/B Tests*
+
 ### Walkthrough of RecommenderMetrics.py
 
 ### Walkthrough of TestMetrics.py
 
 ### Measure the Performance of SVD Recommendations
 
+- **Surprise** - A Python scikit for recommender systems - http://surpriselib.com/
+
+Think of it as **Test Driven Development**, we're going to write our tests before we write any actual Recommender Systems
 
   
 ## A Recommender Engine Framework

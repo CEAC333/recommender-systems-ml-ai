@@ -295,7 +295,7 @@ Start Spyder in our RecSys Environment
 
 Code > Evaluating > `RecommenderMetrics.py`
 
-```
+```python
 import itertools
 
 from surprise import accuracy
